@@ -1,0 +1,37 @@
+@(title: String,js_css: Html)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+
+        <!-- Basic CSS Style (other styles are included in this file) -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
+
+		<!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" media="all" href="@routes.Assets.at("stylesheets/ie8.css")">
+		<![endif]-->
+		
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/custom.js")" type="text/javascript"></script>
+        @js_css
+    </head>
+    <body>
+    	<!-- Start Wrapper -->
+		<div id="wrapper">
+			@header()
+        	@content
+       </div>
+       <!-- End Wrapper -->
+       @footer()
+    </body>
+</html>

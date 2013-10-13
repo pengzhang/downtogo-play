@@ -1,0 +1,158 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+<!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>Blog / <em>Join the conversation</em></h1>
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Blog -->
+        <div class="sidebars three-fourth-divider">
+
+            <!-- Start Blog Post (left side) --> 
+            <div class="sidebar three-fourth-seg rollover left">
+
+              <!-- Start Blog Post Content -->
+              <div class="blog single">
+                <div class="blog-title">
+                  <h3>Vestibulum adipiscing commodo tellus volutpat</h3>
+                  <span class="blog-info">Posted by Admin on March 28, 2012 in <a href="#">Web Design</a> | 12 comments</span>
+                </div>
+                <div class="imagebox right-margin">
+                  <img src="@routes.Assets.at("images/content/blog/blog_image_1.jpg")" alt="Vestibulum adipiscing commodo tellus volutpat" />
+                </div>
+                <div>
+                  <p>Proin fermentum libero ac lectus commodo non congue velit. Nulla pellentesque, lacus commodo gravida, dui enim convallis lectus, a ullamcorper lorem massa leo. Integer enim sit amet justo tristique consectetur sit amet vitae eros. Mauris magna diam bibendum egestas. Curabitur euismod malesuada risus. In quam lorem, dignissim scelerisque urna, venenatis ligula. Nullam venenatis augue pretium sodales dui malesuada.</p><br /><p>Maecenas ultrices condimentum sed tincidunt. Nulla tellus dolor pharetra vulputate. Pellentesque a tincidunt velit. Nam molestie lacinia erat non consequat. Proin gravida tortor mauris, vel porttitor ligula. Cras rhoncus, lacus ut commodo porta, magna purus rutrum erat, non tristique metus nunc sed ante. Sed nulla dolor, sollicitudin vel consequat nec, sollicitudin in orci. Cras ligula massa, quis fermentum tempor vel, molestie at lectus.</p><br /><p>Etiam imperdiet aliquet, consectetur pellentesque mauris fringilla at. Duis tincidunt accumsan velit quis consectetur. Donec scelerisque augue eu tortor ornare adipiscing. Aliquam erat volutpat. Pellentesque ultricies ornare dolor, a sollicitudin enim rhoncus in. Mauris sagittis est in est volutpat fermentum. Integer lacinia nunc ac erat convallis condimentum. Vestibulum arcu leo, sollicitudin ac ornare et, commodo vel erat. Etiam blandit, orci a tristique aliquam, urna risus sodales dui, massa non adipiscing justo arcu ac nunc. Nulla ultricies risus non erat euismod ultricies. Etiam in odio quis ante adipiscing iaculis.</p>
+                </div>
+              </div>
+              <!-- End Blog Post Content -->
+
+              <!-- Start Comments -->
+              <div class="title left-pos"><h2>5 Comments</h2></div>
+
+              <div class="comments" id="comments">
+                <ol id="singlecomments" class="list">
+
+                  <li class="clearfix">
+                    <div class="user imagebox">
+                      <img src="images/content/blog/avatar_image_1.jpg" class="avatar" alt="" />
+                    </div>
+                    <div class="message">
+                      <h4><a href="#">Emilia Gheen</a></h4>
+                      <span class="date">March 28, 2011 07:08:32</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies, lorem in faucibus gravida, arcu est varius ipsum, sit amet tristique erat massa placerat dui. Maecenas aliquet erat at tortor tempor malesuada.</p>
+                      <div class="right"><a onclick="this.blur(); return false;" href="#" class="blue-button">Reply</a></div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+
+                  <li class="clearfix">
+                    <div class="user imagebox">
+                      <img src="@routes.Assets.at("images/content/blog/avatar_image_2.jpg")" class="avatar" alt="" />
+                    </div>
+                    <div class="message">
+                      <h4><a href="#">Kurt Lenzi</a></h4>
+                      <span class="date">March 28, 2012 07:09:07</span>
+                      <p>Cras molestie cursus metus semper congue orci. Donec cursus, erat sit amet venenatis dignissim, velit nisi rhoncus nisl, sed lobortis sapien lacus ac dui. Suspendisse eu molestie orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                      <div class="right"><a onclick="this.blur(); return false;" href="#" class="blue-button">Reply</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <ul class="child">
+                      <li class="clearfix">
+                        <div class="user imagebox">
+                          <img src="@routes.Assets.at("images/content/blog/avatar_image_3.jpg")" class="avatar" alt="" />
+                        </div>
+                        <div class="message">
+                          <h4><a href="#">Selena Row</a></h4>
+                          <span class="date">March 28, 2012 07:10:04</span>
+                          <p>Praesent venenatis tincidunt nisl a non via eleifend. Suspendisse urna dui, adipiscing quis viverra non, tincidunt sit amet magna.</p>
+                          <div class="right"><a onclick="this.blur(); return false;" href="#" class="blue-button">Reply</a></div>
+                        </div>
+                        <div class="clear"></div>
+                        <ul class="child">
+                          <li class="clearfix">
+                            <div class="user imagebox">
+                              <img src="@routes.Assets.at("images/content/blog/avatar_image_4.jpg")" class="avatar" alt="" />
+                            </div>
+                            <div class="message">
+                              <h4><a href="#">Eve Luedke</a></h4>
+                              <span class="date">March 28, 2012 07:18:20</span>
+                              <p>Cras laoreet risus non dui molestie via non sagittis. Donec placerat scelerisque mauris et porttitor. In quis lorem sem, sed fermentum magna. Sed tincidunt nulla dui. Nullam mollis, mauris in molestie placerat, massa ante euismod est, ut egestas enim turpis.</p>
+                              <div class="right"><a onclick="this.blur(); return false;" href="#" class="blue-button">Reply</a></div>
+                            </div>
+                            <div class="clear"></div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class= "clearfix">
+                    <div class="user imagebox">
+                      <img src="@routes.Assets.at("images/content/blog/avatar_image_5.jpg")" class="avatar" alt="" />
+                    </div>
+                    <div class="message">
+                      <h4><a href="#">Max Veiga</a></h4>
+                      <span class="date">March 28, 2012 07:32:18</span>
+                      <p>Pellentesque ac urna venenatis tellus. Suspendisse potenti. Maecenas aliquam consectetur ultricies. Maecenas vel nisi sapien, non pulvinar risus. Pellentesque dignissim tortor in velit commodo vitae sagittis libero dignissim.</p>
+                      <div class="right"><a onclick="this.blur(); return false;" href="#" class="blue-button">Reply</a></div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+
+                </ol>
+              </div>
+              <!-- End Comments -->
+
+              <!-- Start Comments Form -->
+              <div class="title left-pos"><h2>Leave Your Comment</h2></div>      
+
+                <div class="comments-form left">
+                  <form id="comment_form" method="post" action="#">
+                    <div>
+                      <label>Name <span class="required">(required)</span></label>
+                      <input type="text" name="author" id="author" value="" />
+                    </div>
+                    <div>
+                      <label>Email <span class="required">(required)</span></label>
+                      <input type="text" name="email" id="email" value="" />
+                    </div>
+                    <div>
+                      <label>Website</label>
+                      <input type="text" name="url" id="url" value="http://" />
+                    </div>
+                    <div class="message-box">
+                      <label>Comment <span class="required">(required)</span></label>
+                      <textarea name="msg" id="msg" rows="5" cols="95"></textarea>
+                    </div>
+                    <div class="comments-button">
+                      <a onclick="this.blur(); return false;" href="#" class="blue-button">Add Comment</a>
+                    </div>
+                  </form>
+                </div>
+                
+              <div class="clear"></div>
+              <!-- End Comments Form -->    
+
+            </div>
+            <!-- End Blog List (left side) -->
+
+            @blog_sider()
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Blog -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+}

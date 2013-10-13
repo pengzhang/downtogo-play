@@ -1,0 +1,149 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.nivo.slider.pack.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.carouFredSel-5.5.5-packed.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/mosaic.1.0.1.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.cycle.all.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.quicksand.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.easing.1.3.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/portfolio.filter.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.prettyPhoto.js")"></script>
+
+<script type="text/javascript">
+
+$(window).load(function() {
+
+    // Equal Column Height
+
+    var biggestHeight = 0;
+
+    $('ul.image-grid li').each(function(){
+        if($(this).height() > biggestHeight){
+            biggestHeight = $(this).height();
+        }
+    });
+    
+    $('ul.image-grid li').height(biggestHeight);
+});
+
+$(document).ready(function() {
+
+    // Image Overlays
+
+    $('.lower-panel').mosaic({
+        animation: 'slide'
+    });
+
+    $('.upper-panel').mosaic({
+        animation: 'slide',
+        anchor_y: 'top'
+    });
+
+    $('.zoom').mosaic({
+        opacity: 0.7
+    });
+
+    $('.play').mosaic({
+        opacity: 0.7
+    });
+
+    // prettyPhoto
+
+    $("#filter a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'light_square', // or "dark_square" for dark style
+        animation_speed: 'fast',
+        overlay_gallery: false
+    });
+
+    // Circle
+
+    $('.multi').cycle({
+        fx: 'scrollVert',
+        speed: 500,
+        timeout: 0,
+        next: '#down',
+        prev: '#up'
+    });
+
+});
+
+</script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+ <!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="left"><h1>免费电子书 / <em>知识改变命运</em></h1></div>
+
+            <!-- Start Portfolio Categories -->
+            <div class="right">
+                <ul id="filter-list">
+                    <li class="list-item current"><a href="#" id="all">All Works</a></li>
+                    <li class="list-item"><a href="#" id="brand">Brand Identity</a></li>
+                    <li class="list-item"><a href="#" id="graphic">Graphic Design</a></li>
+                    <li class="list-item"><a href="#" id="photo">Photography</a></li>
+                    <li class="list-item"><a href="#" id="web">Web Design</a></li>
+                </ul>
+            </div>
+            <!-- End Portfolio Categories -->
+
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Portfolio -->
+        <div class="fullwidth">
+            <div class="complex one">
+
+            <!-- Start Full Description Portfolio -->
+            <ul id="filter" class="image-grid one-column mosaic-large">
+
+                <!-- Start Portfolio Item -->
+                <li id="id-1" class="graphic">
+                    <div class="imagebox left">
+                        <div class="mosaic-block zoom">
+                            <!--<a href="images/content/portfolio/portfolio_image_1.jpg" class="mosaic-overlay" title="Lorem Ipsum" rel="prettyPhoto[portfolio]">&nbsp;</a>-->
+                            <div class="mosaic-backdrop"><img src="@routes.Assets.at("images/content/portfolio/portfolio_2col_thumb_1.jpg")" alt="" /></div>
+                        </div>
+                    </div>
+                    <div class="project-info right">
+                        <h3>Java 入门经典</h3>
+                        <p>这是一本非常经典的书籍，包含JDK全部的用法</p>
+                        <div class="project-details">
+                            <span><strong>书名:</strong> Cypra Style</span>
+                            <span><strong>作者:</strong> Website Design, Programming</span>
+                            <span><strong>Completed:</strong> May, 2012</span>
+                            <span><strong>下载地址:</strong><a href="http://www.cyprastyle.com/" rel="external">地址一</a></span>
+                            <span class="share"><strong>分享到:</strong><a href="#" title="Twitter"><img src="@routes.Assets.at("images/social/twitter_small.png")" alt="Twitter" /></a><a href="#" title="Facebook"><img src="@routes.Assets.at("images/social/facebook_small.png")" alt="Facebook" /></a></span>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Portfolio Item -->
+
+            </ul>
+            <!-- End Full Description Portfolio -->
+
+            </div>
+        </div>
+        <!-- End Portfolio -->
+
+        <!-- Start Page -->
+        <div class="blog-nav">
+            <span>Page 1 of 5</span>
+            <ul class="blue-button-nav">
+                <li><a href="#" class="current">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+        <!-- End Page -->
+    </div>
+    <!-- End Content -->
+}

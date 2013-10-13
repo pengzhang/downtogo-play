@@ -1,0 +1,150 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.nivo.slider.pack.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.carouFredSel-5.5.5-packed.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/mosaic.1.0.1.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.cycle.all.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.quicksand.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.easing.1.3.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/portfolio.filter.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.prettyPhoto.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.dimensions.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.tooltip.js")"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    // Image Overlays
+
+    $('.lower-panel').mosaic({
+        animation: 'slide'
+    });
+
+    $('.upper-panel').mosaic({
+        animation: 'slide',
+        anchor_y: 'top'
+    });
+
+    $('.zoom').mosaic({
+        opacity: 0.7
+    });
+
+    // Image Tooltip
+
+    //<![CDATA[
+    $(".imageTooltip .imagebox a").tooltip({
+        showTitle: true,
+        track: true, 
+        bodyHandler: function() {
+            return $("<img/>").attr("src", $(this).attr("rel"));
+        }
+    });
+    //]]>
+
+    // prettyPhoto
+
+    $(".mosaic-block a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'light_square', // or "dark_square" for dark style
+        animation_speed: 'fast',
+        overlay_gallery: false
+    });
+
+});
+		    
+</script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+ <!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="left"><h1>Portfolio / <em>Our completed works</em></h1></div>
+
+            <!-- Start Portfolio Categories -->
+            <div class="right">
+                <ul id="filter-list">
+                    <li class="list-item current"><a href="#" id="all">All Works</a></li>
+                    <li class="list-item"><a href="#" id="brand">Brand Identity</a></li>
+                    <li class="list-item"><a href="#" id="graphic">Graphic Design</a></li>
+                    <li class="list-item"><a href="#" id="photo">Photography</a></li>
+                    <li class="list-item"><a href="#" id="web">Web Design</a></li>
+                </ul>
+            </div>
+            <!-- End Portfolio Categories -->
+
+        </div>
+        <!-- End Topbar -->
+        
+        <!-- Start Portfolio Item Details -->
+        <div class="sidebars">
+           
+           <!-- Start Left Sidebar --> 
+           <div class="sidebar one-half-seg nodivider left">
+
+            <!-- Start Project Images -->
+            <ul class="project-images mosaic-large">
+                <li>
+                    <div class="imagebox">
+                        <div class="mosaic-block lower-panel">
+                            <div class="mosaic-overlay">
+                                <div class="mosaic-caption">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                            <div class="mosaic-backdrop"><img src="@routes.Assets.at("images/content/portfolio/portfolio_post_thumb_2.jpg")" alt="" /></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- End Project Images -->
+
+            </div>
+            <!-- End Left Sidebar --> 
+
+            <!-- Start Right Sidebar --> 
+            <div class="sidebar one-half-seg nodivider right">
+
+            <!-- Start Project Details -->
+            <div class="project-info">
+                <h3>Morbi Sodales</h3>
+                <p>Phasellus ligula felis, sodales consectetur sagittis tellus. Mauris id nulla enim purus. Duis euismod eget tristique eu, molestie sit amet turpis un massa non risus auctor erat volutpat.</p>
+                <div class="project-details">
+                    <span><strong>Client:</strong> DriveBox Consulting (<a href="http://www.drivebox.co/" rel="external">www.drivebox.co</a>)</span>
+                    <span><strong>Project:</strong> Logo Design, Corporate Brochure</span>
+                    <span><strong>Completed:</strong> February, 2012</span>
+                    <span><strong>Work Team:</strong> Julio Agostini, Tia Larabee</span>
+                    <span class="share"><strong>Share:</strong><a href="#" title="Twitter"><img src="@routes.Assets.at("images/social/twitter_small.png")" alt="Twitter" /></a><a href="#" title="Facebook"><img src="@routes.Assets.at("images/social/facebook_small.png")" alt="Facebook" /></a><a href="#" title="Flickr"><img src="@routes.Assets.at("images/social/flickr_small.png")" alt="Flickr" /></a></span>
+                </div>
+            </div>
+            <!-- End Project Details -->
+
+            <!-- Start Other Works -->
+            <div class="title"><h2>Other Works</h2></div>
+
+            <ul id="filter" class="other-works imageTooltip">
+
+                <li id="id-1" class="photo">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" title="Lorem Ipsum" alt="Tom"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_1.jpg")" alt="Tom" /></a></div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- End Other Works -->
+
+            </div>
+            <!-- End Right Sidebar --> 
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Portfolio Item Details -->
+
+    </div>
+    <!-- End Content -->
+}

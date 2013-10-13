@@ -1,0 +1,63 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+<!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>技术文章 / <em>一点一滴积累</em></h1>
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Blog -->
+        <div class="sidebars three-fourth-divider">
+
+            <!-- Start Blog List (left side) --> 
+            <div class="sidebar three-fourth-seg rollover left">
+
+                <!-- Start Blog Post 1 -->
+                <div class="blog">
+                    <div class="blog-title">
+                        <h3><a href="blog_post.html">Vestibulum adipiscing commodo tellus volutpat</a></h3>
+                        <span class="blog-info">Posted by Admin on March 28, 2012 in <a href="#">Web Design</a> | 12 comments</span>
+                    </div>
+                    <div class="imagebox right-margin">
+                        <a href="/blog_post"><img src="@routes.Assets.at("images/content/blog/blog_image_1.jpg")" alt="Vestibulum adipiscing commodo tellus volutpat" /></a>
+                    </div>
+                    <div>
+                        <p>Proin fermentum libero ac lectus commodo non congue velit. Nulla pellentesque, lacus commodo gravida, dui enim convallis lectus, a ullamcorper lorem massa leo. Integer enim sit amet justo tristique consectetur sit amet vitae eros. Mauris magna diam bibendum egestas.</p>
+                        <span class="readmore"><a href="blog_post.html" class="blue-button">Read More</a></span>
+                    </div>
+                </div>
+                <!-- End Blog Post 1 -->
+
+                <div class="blog-nav">
+                    <span>Page 1 of 5</span>
+                    <ul class="blue-button-nav">
+                        <li><a href="#" class="current">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- End Blog List (left side) -->
+
+            @blog_sider()
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Blog -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+}

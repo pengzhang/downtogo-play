@@ -1,0 +1,172 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.nivo.slider.pack.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.carouFredSel-5.5.5-packed.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/mosaic.1.0.1.js")"></script>
+
+<script type="text/javascript">
+
+// Nivo Slider
+
+$(window).load(function() {
+    $('#nivoSlider').nivoSlider({
+        effect: 'random', // Specify sets like: 'fold,fade,sliceDown'
+        animSpeed: 500, // Slide transition speed
+        pauseTime: 5000, // How long each slide will show
+        startSlide: 0, // Set starting Slide (0 index)
+        captionOpacity: 0.8 // Universal caption opacity
+    });
+});
+
+// Image Overlays
+
+$(document).ready(function() {
+
+    $('.plus').mosaic({
+        opacity: 0.7
+    });
+
+// var $whatever        = $('.grandchild');
+// var ending_right     = window.innerWidth - $whatever.offset().left + $whatever.outerWidth();
+// alert(ending_right);
+
+});
+
+// Carousel
+
+$(window).load(function() {
+    $('#carousel ul').carouFredSel({
+        items: 4,
+        scroll: {
+        items: 4,
+        // pauseDuration: 5000, // uncomment this line when "auto" option is true
+        duration: 1000
+        },
+        auto: false,
+        prev: '#prev',
+        next: '#next'
+    });
+});
+
+</script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css) {
+
+ <!-- Start Content -->
+ <div id="content">
+
+     <!-- Start Slider Wrapper -->
+     <div class="slider">
+     <div class="top-glow"></div>
+         <div class="slider-wrapper">
+         <div class="top-shadow"></div>
+
+             <!-- Start Nivo Slider -->
+             <div class="theme-default">
+
+                 <div id="nivoSlider" class="nivoSlider">
+                     <img src="@routes.Assets.at("images/content/slider/slider_image_1.jpg")" alt="" />
+                     <img src="@routes.Assets.at("images/content/slider/slider_image_6.jpg")" alt="" />
+                     <img src="@routes.Assets.at("images/content/slider/slider_image_8.jpg")" alt="" />
+                 </div>
+
+
+             </div>
+             <!-- End Nivo Slider -->
+
+         <div class="bottom-shadow"></div>
+         </div>
+     <div class="bottom-glow"></div>
+     </div>
+     <!-- End Slider Wrapper -->
+
+     <!-- Start Intro Text -->
+     <div class="intro">
+     <div class="horizon-line"></div>
+         <div class="top-shadow"></div>
+             <p>这是一个自由的空间，在这里你可以自由的发挥你的想象力，说出你的想法，协同团队的小伙伴帮你实现，最后分享大家伙的成果！嗨，干什么呢？赶快行动起来吧...</p>
+         <div class="bottom-shadow"></div>
+     <div class="horizon-line"></div>
+     </div>
+     <!-- End Intro Text -->
+
+     <!-- Start Projects -->
+     <div class="projects">
+
+     <!-- Start Carousel -->
+     <div class="column three-fourth">
+         <div id="carousel">
+             <div class="wrapper">
+                 <ul>
+                     <!-- Start Project 1 -->
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 1 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_1.jpg")" alt="Project 1" /></a></li>
+                     <!-- End Project 1 -->
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 2 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_2.jpg")" alt="Project 2" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 3 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_3.jpg")" alt="Project 3" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 4 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_4.jpg")" alt="Project 4" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 5 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_5.jpg")" alt="Project 5" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 6 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_6.jpg")" alt="Project 6" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 7 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_7.jpg")" alt="Project 7" /></a></li>
+                     <li class="imagebox"><a href="portfolio_post.html" title="View Project 8 Details"><img src="@routes.Assets.at("images/content/portfolio/portfolio_thumb_8.jpg")" alt="Project 8" /></a></li>
+                 </ul>
+             </div>
+             <div class="clearfix"></div>
+             <a id="prev" class="prev" href="#" title="Previous Line">&lt;</a>
+             <a id="next" class="next" href="#" title="Next Line">&gt;</a>
+         </div>
+     </div>
+     <!-- End Carousel -->
+
+     <div class="column one-fourth latest">
+         <div class="description">
+             <h2>免费电子书</h2>
+             <p>书籍均收集自互联网，仅供学习和研究使用,其版权归该书籍的合法拥有者所有，请莫用于商业用途.</p>
+         </div>
+     </div>
+
+     <div class="clear"></div>
+     <div class="horizon-line"></div>
+     </div>
+     <!-- End Projects -->
+
+     <!-- Start Info Blocks -->
+     <div class="info-blocks">
+
+         <!-- Start Testimonials -->
+         <div class="testimonials left">
+             <h2>小站寄语</h2>
+
+             <!-- Start Testimonial -->
+             <div class="testimonial bubble1">
+                 <div class="content">
+                     <p>失败是什么？没有什么，只是更走近成功一步；成功是什么？就是走过了所有通向失败的路，只剩下一条路，那就是成功的路</p>
+                 </div>
+                 <div class="shadow">
+                     <div class="arrow"><span class="author">小站长</span></div>
+                 </div>
+             </div>
+             <!-- End Testimonial -->
+
+     	</div>
+         <!-- End Testimonials -->
+
+         <!-- Start Who We Are -->
+         <div class="whoweare right">
+             <h2>我们是谁？ / <em>走在成功路上的小青年</em></h2>
+             <p>我们都是有梦想的小青年，每当我们想起自己的梦想的时候，嘴角都会露出一丝丝的坏笑。但是面对现实的时候，我们却是一只小蚂蚁，努力的奔波，心里总想着又离成功进一点了...</p>
+             <a class="blue-button" href="#" onclick="this.blur(); return false;">我们在这里呦...</a>
+         </div>
+         <!-- End Who We Are -->
+
+     <div class="clear"></div>
+     </div>
+     <!-- End Info Blocks -->
+
+ <div class="horizon-line"></div>
+ </div>
+ <!-- End Content -->
+}

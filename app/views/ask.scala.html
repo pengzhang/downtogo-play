@@ -1,0 +1,218 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/sdmenu.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/ddaccordion.js")"></script>
+<script type="text/javascript">
+
+// Sidebar Menu
+
+var sidebarMenu;
+window.onload = function() {
+    sidebarMenu = new SDMenu("sidebar_menu");
+    sidebarMenu.speed = 5;                     // Menu sliding speed (1 - 5 recomended)
+    sidebarMenu.remember = true;               // Store menu states (expanded or collapsed) in cookie and restore later
+    sidebarMenu.oneSmOnly = false;             // One expanded submenu at a time
+    sidebarMenu.markCurrent = true;            // Mark current link / page (link.href == location.href)
+    sidebarMenu.init();
+
+    var firstSubmenu = sidebarMenu.submenus[0];
+    sidebarMenu.expandMenu(firstSubmenu);      // Expand a submenu
+};
+
+// Tabbed Content
+    
+$(document).ready(function(){
+    //<![CDATA[
+
+    function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    $('ul.tabs').each(function(i) {
+        var cookie = readCookie('tabCookie'+i);
+        if (cookie) $(this).find('li').eq(cookie).addClass('current').siblings().removeClass('current')
+            .parents('div.tabbed-content').find('div.box').hide().eq(cookie).show();
+    })
+
+    $('ul.tabs').delegate('li:not(.current)', 'click', function() {
+        $(this).addClass('current').siblings().removeClass('current')
+            .parents('div.tabbed-content').find('div.box').hide().eq($(this).index()).show();
+        var ulIndex = $('ul.tabs').index($(this).parents('ul.tabs'));
+        eraseCookie('tabCookie'+ulIndex);
+        createCookie('tabCookie'+ulIndex, $(this).index(), 365);
+    })
+
+    //]]>
+});
+
+// Toggle Panel
+
+ddaccordion.init({
+    //<![CDATA[
+
+    headerclass: "toggle-title", 
+    contentclass: "toggle-content", 
+    revealtype: "click", 
+    mouseoverdelay: 2000, 
+    collapseprev: true, 
+    defaultexpanded: [3], 
+    onemustopen: true, 
+    animatedefault: true,
+    persiststate: true,
+    toggleclass: ["close-toggle", "open-toggle"], 
+    togglehtml: ["prefix", "<img src='images/minus.png' alt='' style='width:11px; height:11px; margin-top:13px; float:left;' /> ", "<img src='images/plus.png' alt='' style='width:11px; height:11px; margin-top:13px; float:left;' /> "], 
+    animatespeed: "fast", 
+    oninit:function(expandedindices){ 
+    },
+    onopenclose:function(header, index, state, isuseractivated){        
+    }
+
+    //]]>
+})
+
+</script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+<!-- Start Content -->
+    <div id="content">
+    
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>Features / <em>JavaScript additions</em></h1>
+        </div>
+        <!-- End Topbar -->
+        
+        <!-- Start Features -->
+        <div class="sidebars three-fourth-divider">
+
+            <!-- Start Left Side --> 
+            <div class="sidebar three-fourth-seg left">
+
+                <div class="title left-pos"><h2>Toggle Panel</h2></div>
+
+                <!-- Start Toggle Panel -->
+                <div class="toggle-panel">
+
+                    <div class="toggle-title"><a href="#">Proin imperdiet tempus molestie</a></div>
+                    <div class="toggle-content">
+                        <div class="imagebox right-margin"><img src="@routes.Assets.at("images/content/features/feature_image.jpg")" alt="" /></div>
+                        <p>Nam vulputate gravida scelerisque. Cras sagittis mollis lorem non iaculis. Cras nec enim leo, eu semper metus. Aliquam non mattis adipiscing tellus iaculis. Etiam pretium scelerisque felis quis semper. Maecenas volutpat, urna vitae sollicitudin accumsan, enim arcu dapibus sapien, sed luctus nulla justo turpis. Ut nisi magna, sodales laoreet eget, iaculis tincidunt lorem. Fusce feugiat, velit imperdiet posuere, nibh neque semper libero, eget iaculis augue eros a purus. Proin cursus velit non lorem urna fermentum at rhoncus dolor tempor. Nullam elementum, magna elementum pellentesque, dui dolor commodo elit, eget malesuada augue libero tempor leo. Praesent sagittis eleifend augue id dignissim. In habitasse platea dictumst.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Aliquam tristique tempus lacus sit amet pharetra</a></div>
+                    <div class="toggle-content">
+                        <div class="imagebox left-margin"><img src="@routes.Assets.at("images/content/features/feature_image.jpg")" alt="" /></div>
+                        <p>Nam vulputate gravida scelerisque. Cras sagittis mollis lorem non iaculis. Cras nec enim leo, eu semper metus. Aliquam non mattis adipiscing tellus iaculis. Etiam pretium scelerisque felis quis semper. Maecenas volutpat, urna vitae sollicitudin accumsan, enim arcu dapibus sapien, sed luctus nulla justo turpis. Ut nisi magna, sodales laoreet eget, iaculis tincidunt lorem. Fusce feugiat, velit imperdiet posuere, nibh neque semper libero, eget iaculis augue eros a purus. Proin cursus velit non lorem urna fermentum at rhoncus dolor tempor. Nullam elementum, magna elementum pellentesque, dui dolor commodo elit, eget malesuada augue libero tempor leo. Praesent sagittis eleifend augue id dignissim. In habitasse platea dictumst.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Donec lacinia ultrices diam vitae vulputate</a></div>
+                    <div class="toggle-content">                           
+                        <div>
+                            <h4>Duis faucibus scelerisque auctor</h4>
+                            <p>Duis faucibus scelerisque auctor. Ut dui nisi, lobortis sed tristique quis, luctus pulvinar orci. Donec lacinia ultrices diam vitae vulputate. Proin ut eros turpis. Quisque varius, ante ut fermentum faucibus, orci dolor porta magna, nec feugiat magna lacus eget magna. Nullam tortor arcu, auctor quis ornare in, convallis in felis. In elementum eleifend vulputate. Aliquam eleifend nunc sed lacus sagittis varius. Nunc semper magna vel lorem adipiscing ultricies.</p>
+                        </div>                                
+                        <div>
+                            <h4>Praesent massa dui</h4>
+                            <p>Praesent massa dui, lobortis quis eleifend non, dignissim id libero. Sed sit amet elit id nibh imperdiet mattis malesuada ut ipsum. Nulla dolor nisl, commodo eget vestibulum ut, dapibus non mi. Sed volutpat tempus euismod. Aliquam eu ipsum quam. Cras scelerisque ullamcorper arcu vel porta. Suspendisse vestibulum enim iaculis arcu suscipit tempus.</p>
+                        </div>
+                        <div class="last">
+                            <h4>Mauris quis tortor velit</h4>
+                            <p>Mauris quis tortor velit, sed gravida velit. Nunc fermentum suscipit tellus id facilisis. Donec lacinia turpis et nibh porta scelerisque. Duis pellentesque mi sed quam consectetur sit amet vestibulum tortor tempus. In sed lorem at enim bibendum sodales vel non purus. Curabitur a justo justo. Duis bibendum, dolor sed vulputate tincidunt, magna magna adipiscing diam, non tempus urna dui velit.</p>
+                        </div>
+                    </div>
+
+                    <div class="toggle-shadow"></div>
+
+                </div>
+                <!-- End Toggle Panel -->
+
+
+            </div>
+            <!-- End Left Side -->
+
+            <!-- Start Right Side -->
+            <div class="sidebar one-fourth-seg right">
+
+                <div class="corner-shadow right-one-fourth"></div>
+
+                <!-- Start Sidebar Menu -->
+                <div class="title right-pos"><h2>Sidebar Menu</h2></div>
+
+                <div class="sidebar-menu">
+
+                    <span class="menu-top">
+                        <a onclick="sidebarMenu.expandAll()" class="expand" title="Expand All"></a>
+                        <a onclick="sidebarMenu.collapseAll()" class="collapse" title="Collapse All"></a>
+                    </span>
+
+                    <div id="sidebar_menu" class="sdmenu">
+                        <div>
+                            <span>Sidebar Menu 1</span>
+                            <a href="javascript_additions.html">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                            <a href="#">Sidebar Submenu 5</a>
+                            <a href="#">Sidebar Submenu 6</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 2</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 3</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 4</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-bottom"></div>
+
+                </div>
+                <!-- End Sidebar Menu -->
+
+            </div>
+            <!-- End Right Side -->
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Features -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+}

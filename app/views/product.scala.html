@@ -1,0 +1,59 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+<!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>Features / <em>Page with right sidebar</em></h1>
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Features -->
+        <div class="sidebars three-fourth-divider">
+
+            <!-- Start Left Side --> 
+            <div class="sidebar three-fourth-seg left">
+
+                <div class="imagebox right-margin">
+                    <img src="@routes.Assets.at("images/content/features/feature_image.jpg")" alt="" />
+                </div>
+ 
+                <p>Fusce mauris ipsum, feugiat vel pharetra nec, commodo sed enim. Maecenas purus libero, viverra id hendrerit at, facilisis et sapien. Sed non ante enim, id sollicitudin dui. Quisque lorem ligula, pharetra sed posuere non, auctor vitae massa. Nulla est leo, porttitor non dapibus in, volutpat eu metus. Suspendisse potenti. Ut dapibus tincidunt nunc at posuere. Donec nunc lectus, faucibus quis vehicula in, placerat quis dolor. Nam cursus rhoncus scelerisque. Morbi nec dolor ante. Nam consectetur, arcu ac consectetur egestas, sapien nibh dignissim velit, sed aliquet turpis urna id urna. Fusce eu dui risus, placerat sagittis neque. Donec tincidunt porta sollicitudin. Mauris molestie blandit urna eget venenatis.</p><br />
+
+                <p>Duis a purus justo, vel dapibus turpis. Suspendisse potenti. Praesent a orci turpis, eu tempus nunc. Morbi sed vestibulum urna. Sed ipsum augue, adipiscing non cursus sed, euismod a odio. Suspendisse potenti. Pellentesque dictum, mi eu gravida gravida, nisl quam aliquam tellus, eu fermentum dolor tellus id turpis. Duis ultrices, augue at convallis posuere, risus augue varius lorem, nec iaculis tortor diam sit amet diam. Nunc scelerisque ornare dignissim. Mauris sit amet turpis sed magna vulputate sagittis nec non libero.</p><br />
+
+                <p>Suspendisse condimentum orci ut mi viverra quis venenatis nisl suscipit. Morbi sit amet dolor nec magna tempor porta. Vivamus consectetur, sem quis vehicula lobortis, odio felis mattis sem, nec auctor mi justo vitae velit. Nullam molestie, sapien non porttitor ornare, ligula enim imperdiet dui, ac fermentum arcu enim sit amet enim. Aliquam erat volutpat. Sed nisi elit, condimentum id sodales non, tristique ut ligula. Aliquam posuere augue sapien. Duis sollicitudin eleifend erat vitae pellentesque. Cras ac turpis nec libero blandit congue at a felis. Sed ut sapien in lorem ornare eleifend.</p>
+
+            </div>
+            <!-- End Left Side -->
+
+            <!-- Start Right Side -->
+            <div class="sidebar one-fourth-seg right">
+
+                <div class="corner-shadow right-one-fourth"></div>
+
+                <div class="banners rollout">
+                    <div class="imagebox"><a href="http://themeforest.net/?ref=Mazaloo"><img src="@routes.Assets.at("images/content/features/feature_tf_banner.png")" title="Site Templates and Themes" alt="ThemeForest" /></a></div>
+                    <div class="imagebox"><a href="http://graphicriver.net/?ref=Mazaloo"><img src="@routes.Assets.at("images/content/features/feature_gr_banner.png")" title="Awesome Stock Graphics" alt="GraphicRiver" /></a></div>
+                    <div class="imagebox"><a href="http://codecanyon.net/?ref=Mazaloo"><img src="@routes.Assets.at("images/content/features/feature_cc_banner.png")" title="PHP, JS, Java and .NET" alt="CodeCanyon" /></a></div>
+                    <p>Nunc gravida eleifend un scelerisque. Fusce mauris ligula mi aliquet semper, ante mollis in turpis, convallis ornare nulla aliquam tellus elit.</p>
+                </div>
+
+            </div>
+            <!-- End Right Side -->
+        
+        <div class="clear"></div>
+        </div>
+        <!-- End Features -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+}

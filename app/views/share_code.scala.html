@@ -1,0 +1,73 @@
+@(message: String)
+
+@js_css={
+<!-- JavaScript Files -->
+<script type="text/javascript" src="@routes.Assets.at("javascripts/superfish.js")"></script>
+}
+
+@main("大土狗·黑黑 | Downtogo.cn",js_css){
+<!-- Start Content -->
+    <div id="content">
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>Features / <em>Columns &amp; pricing table</em></h1>
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Features -->
+        <div class="fullwidth">
+            <div class="complex one">
+
+                <!-- Start Columns -->
+                <div class="columns">
+
+                    <div class="block">
+                        <h3>1 Column</h3>
+
+                        <!-- Start 1 Column -->
+                        <div class="one"><script src="https://gist.github.com/pengzhang/6950797.js"></script></div>
+                        <!-- End 1 Column -->
+
+                    </div>
+
+                    <div class="block">
+                        <h3>1 Column</h3>
+
+                        <!-- Start 1 Column -->
+                        <div class="one"><script src="https://gist.github.com/pengzhang/6950797.js"></script></div>
+                        <!-- End 1 Column -->
+
+                    </div>
+
+                    <div class="block">
+                        <h3>1 Column</h3>
+
+                        <!-- Start 1 Column -->
+                        <div class="one"><script src="https://gist.github.com/pengzhang/6950797.js"></script></div>
+                        <!-- End 1 Column -->
+
+                    </div>
+                <div class="clear"></div>
+                </div>
+                <!-- End Columns -->
+
+            </div>
+        </div>
+        <!-- End Features -->
+
+        <!-- Start Page -->
+        <div class="blog-nav">
+            <span>Page 1 of 5</span>
+            <ul class="blue-button-nav">
+                <li><a href="#" class="current">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+        <!-- End Page -->
+
+    </div>
+    <!-- End Content -->
+}
